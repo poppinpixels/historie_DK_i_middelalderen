@@ -1,19 +1,12 @@
-// components/Timeline.js
-
-import React, { useState } from 'react';
-import styles from './Timeline.module.css';
+import { useState } from 'react';
 
 const Timeline = ({ events }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   return (
-    <div className={styles.timeline}>
+    <div>
       {events.map((event, idx) => (
-        <div
-          key={idx}
-          className={styles['timeline-event']}
-          onClick={() => setSelectedEvent(event)}
-        >
+        <div key={idx} onClick={() => setSelectedEvent(event)}>
           <h2>{event.title} ({event.date})</h2>
         </div>
       ))}
